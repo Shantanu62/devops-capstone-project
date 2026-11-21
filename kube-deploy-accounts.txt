@@ -1,0 +1,23 @@
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/account-service         1/1     1            1           13m
+deployment.apps/openshift-web-console   2/2     2            2           4h53m
+deployment.apps/postgresql              1/1     1            1           9m7s
+
+NAME                                         READY   STATUS      RESTARTS   AGE
+pod/account-service-1-build                  0/1     Completed   0          17m
+pod/account-service-84d99bf8ff-86hj2         1/1     Running     0          2m39s
+pod/openshift-web-console-75df76c678-bd6sw   2/2     Running     0          4h53m
+pod/openshift-web-console-75df76c678-xv2jq   2/2     Running     0          4h53m
+pod/postgresql-85bf679748-gnm6l              1/1     Running     0          4m45s
+
+NAME                                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/account-service-5bbc4d45b5         0         0         0       13m
+replicaset.apps/account-service-84d99bf8ff         1         1         1       2m39s
+replicaset.apps/openshift-web-console-75df76c678   2         2         2       4h53m
+replicaset.apps/postgresql-85bf679748              1         1         1       4m46s
+replicaset.apps/postgresql-865c68dd78              0         0         0       9m7s
+
+NAME                            TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/account-service         ClusterIP   172.21.251.121   <none>        8080/TCP   13m
+service/openshift-web-console   ClusterIP   172.21.123.132   <none>        8000/TCP   4h53m
+service/postgresql              ClusterIP   172.21.221.237   <none>        5432/TCP   9m7s
