@@ -1,38 +1,34 @@
-#
-# This pipeline needs the following tasks from Tekton Catalog
-#   - git-clone
-#   - flake8
-#
----
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
-metadata:  
+metadata:
   name: cd-pipeline
 spec:
   workspaces:
-    - name: pipeline-workspace
-  params:
-    - name: repo-url
-    - name: branch
-      default: main
+    - name: shared-workspace
   tasks:
-    - name: init
+    - name: clone-and-deploy
       workspaces:
         - name: source
-          workspace: pipeline-workspace          
-      taskRef:
-        name: cleanup
+          workspace: shared-workspace
+      taskSpec:
+        workspaces:
+          - name: source
+        steps:
+          - name: clone-repository
+            image: alpine/git:2.45.2
+            script: |
+              #!/bin/sh
+              set -eu
+              git clone --depth 1 --branch main \
+                https://github.com/Shantanu62/devops-capstone-project.git \
+                $(workspaces.source.path)/repo
 
-    - name: clone
-      workspaces:
-        - name: output
-          workspace: pipeline-workspace          
-      taskRef:
-        name: git-clone
-      params:
-      - name: url
-        value: $(params.repo-url)
-      - name: revision
-        value: $(params.branch)
-      runAfter:
-        - init
+          - name: deploy-application
+            image: quay.io/openshift/origin-cli:4.14
+            script: |
+              #!/bin/sh
+              set -eu
+              oc apply -f $(workspaces.source.path)/repo/deploy/account-service-deployment.yaml
+              oc apply -f $(workspaces.source.path)/repo/deploy/account-service-service.yaml
+              oc rollout status deployment/account-service --timeout=120s
+              echo "CD DEPLOYMENT SUCCESSFUL"

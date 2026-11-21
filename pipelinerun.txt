@@ -1,0 +1,8 @@
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/step-clone-repository] Cloning into '/workspace/source/repo'...
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/step-deploy-application] deployment.apps/account-service unchanged
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/step-deploy-application] service/account-service unchanged
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/step-deploy-application] deployment "account-service" successfully rolled out
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/step-deploy-application] CD DEPLOYMENT SUCCESSFUL
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/prepare] 2026/11/21 19:17:35 Entrypoint initialization
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/place-scripts] 2026/11/21 19:17:35 Decoded script /tekton/scripts/script-0-99slw
+[pod/cd-pipeline-run-zbjdw-clone-and-deploy-pod/place-scripts] 2026/11/21 19:17:35 Decoded script /tekton/scripts/script-1-npjls
