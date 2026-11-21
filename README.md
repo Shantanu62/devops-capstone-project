@@ -131,3 +131,19 @@ You can now perform Tekton development locally, just like in the Cloud IDE lab e
 Licensed under the Apache License. See [LICENSE](LICENSE)
 
 ## <h3 align="center"> © IBM Corporation 2022. All rights reserved. <h3/>
+
+
+---
+
+## Customer Accounts Microservice — Project Plan
+
+This repository is the IBM DevOps Capstone starter for a Python/Flask Customer Accounts microservice. The goal is to implement and test REST operations for reading, updating, deleting, and listing customer accounts, following TDD and targeting at least 95% code coverage.
+
+### Agile Planning
+- [User story template](user-story.md)
+- [Sprint planning guide](planning/BOARD-AND-SUBMISSION.md)
+- [GitHub Issues](https://github.com/Shantanu62/devops-capstone-project/issues)
+- Proposed workflow: New Issues → Product Backlog / Icebox → Sprint Backlog → In Progress → Review/QA → Done.
+- Story-point scale: 3 (S), 5 (M), 8 (L), 13 (XL).
+
+**Status:** The stories and planning documents describe intended work; they are not evidence that APIs, testing, CI, deployment, or Kanban screenshots have been completed.
