@@ -1,0 +1,12 @@
+Command:
+curl -sS -i -X GET http://127.0.0.1:5000/accounts
+
+Actual Output:
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Sat, 21 Nov 2026 14:46:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 293
+
+[{"address":"Bhagalpur, Bihar","date_joined":"2026-11-21","email":"test@example.com","id":13,"name":"Test Customer","phone_number":"9876543210"},{"address":"Bhagalpur, Bihar","date_joined":"2026-11-21","email":"test2@example.com","id":14,"name":"Test Customer 2","phone_number":"9876543211"}]

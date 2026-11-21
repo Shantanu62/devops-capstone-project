@@ -1,0 +1,12 @@
+Command:
+curl -sS -i -X PUT http://127.0.0.1:5000/accounts/14 -H "Content-Type: application/json" -d '{"name":"Updated Customer","email":"updated@example.com","address":"Bhagalpur, Bihar","phone_number":"9876543211","date_joined":"2026-11-21"}'
+
+Actual Output:
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Sat, 21 Nov 2026 14:50:06 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 150
+
+{"address":"Bhagalpur, Bihar","date_joined":"2026-11-21","email":"updated@example.com","id":14,"name":"Updated Customer","phone_number":"9876543211"}

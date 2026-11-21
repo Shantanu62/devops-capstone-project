@@ -1,0 +1,10 @@
+Command:
+curl -sS -i -X DELETE http://127.0.0.1:5000/accounts/14
+
+Actual Output:
+HTTP/1.1 204 NO CONTENT
+Server: gunicorn
+Date: Sat, 21 Nov 2026 14:51:44 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+
